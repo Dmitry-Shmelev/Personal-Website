@@ -1,5 +1,5 @@
 Django==2.2.4
-Jinja2==2.7.3
+Jinja2>=2.10.1
 MarkupSafe==0.23
 pbr==5.4.2
 python-dateutil==2.8.0
