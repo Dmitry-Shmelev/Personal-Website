@@ -1,0 +1,45 @@
+{% extends 'home/base.html' %}
+
+{% block full_name %}
+    {{ full_name }}
+{% endblock %}
+
+{% load static %}
+{% block latest_projects %}
+    {% with project=project_list.0 %}
+        <div class="item featured text-center">
+            <h3 class="title"><a href="{{ project.project_URL }}" target="_blank">{{ project.title }}</a></h3>
+            <p class="summary">{{ project.summary }}</p>
+            <div class="featured-image has-ribbon">
+                <a href="{{ project.project_URL }}" target="_blank">
+                <img  src="{{ project.image.url }}" height="360" width="640" alt="{{ project }}" />
+                </a>
+                <div class="ribbon">
+                    <div class="text">new</div>
+                </div>
+            </div>
+
+            <div class="desc text-left">
+                <p>{{ project.description }}</p>
+            </div><!--//desc-->
+            <a class="btn btn-cta-secondary" href="{{ project.project_URL }}" target="_blank"><i class="fas fa-thumbs-up"></i> See my project</a>
+        </div><!--//item-->
+    {% endwith %}
+{% endblock %}
+{% block secondary_projects %}
+    {% for project in project_list %}
+        {% if not forloop.first %}
+            <div class="item row">
+                <a class="col-md-4 col-12" href="{{ project.project_URL }}" target="_blank">
+                    <img class="img-fluid project-image" src="{{ project.image.url }}" alt="{{ project }}" />
+                </a>
+                <div class="desc col-md-8 col-12">
+                    <h3 class="title"><a href="{{ project.project_URL }}" target="_blank">{{ project.title }}</a></h3>
+                    <p class="mb-2">{{ project.description }}</p>
+                    <p><a class="more-link" href="{{ project.project_URL }}" target="_blank"><i class="fas fa-external-link-alt"></i>Find more ...</a></p>
+                </div><!--//desc-->
+            </div><!--//item-->
+        {% endif %}
+    {% endfor %}
+{% endblock %}
+
