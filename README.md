@@ -24,7 +24,7 @@ In your virtual environment, install django and all requirement libraries.
 Then run your server by this script.
 
 ```bash
-(env)$ pip3 manage.py runserver
+(env)$ python3 manage.py runserver
 ```
 
 You can see my website at https://localhost:8000.
