@@ -18,7 +18,6 @@ $ source virtual/env/bin/active
 In your virtual environment, install django and all requirement libraries.
 
 ```bash
-(env)$ pip3 install django
 (env)$ pip3 install -r requirements.txt
 ```
 
