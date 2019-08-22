@@ -21,6 +21,25 @@ In your virtual environment, install django and all requirement libraries.
 (env)$ pip3 install -r requirements.txt
 ```
 
+Next, you have to install psycopg2 to use PostgreSQL.
+```bash
+(env)$ export LIBRARY_PATH=$LIBRARY_PATH:/usr/local/opt/openssl/lib/
+(env)$ pip3 install psycopg2
+```
+
+Create database and user by psql command.
+```bash
+(env)$ psql
+(env)$ CREATE USER user_name WITH PASSWORD 'user_password';
+(env)$ CREATE DATABASE database_name WITH OWNER user_name;
+```
+
+You can backup database from db.sqlite3 and restore to PostgreSQL.
+```bash
+(env)$ python3 manage.py dumpdata > datadump.json
+(env)$ python3 manage.py loaddata datadump.json
+```
+
 Migrate your database.
 ```bash
 (env)$ python3 manage.py makemigrations
