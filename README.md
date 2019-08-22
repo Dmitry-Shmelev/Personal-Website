@@ -21,6 +21,12 @@ In your virtual environment, install django and all requirement libraries.
 (env)$ pip3 install -r requirements.txt
 ```
 
+Migrate your database.
+```bash
+(env)$ python3 manage.py makemigrations
+(env)$ python3 manage.py migrate
+```
+
 Then run your server by this script.
 
 ```bash
