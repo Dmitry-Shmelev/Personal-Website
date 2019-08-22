@@ -1,6 +1,4 @@
-import os
 from django.db import models
-from django.conf import settings
 from django.utils.safestring import mark_safe
 
 # Create your models here.

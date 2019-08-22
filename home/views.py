@@ -6,7 +6,7 @@ from .models import UserInfo, LatestProject
 
 
 def index(request):
-    user = UserInfo.objects.get()
+    user = UserInfo.objects.first()
     project_list = LatestProject.objects.all()
     context = {
         'full_name': user,
